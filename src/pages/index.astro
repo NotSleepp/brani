@@ -100,9 +100,9 @@ import '@fontsource/cedarville-cursive';
 
   let a=document.getElementById('enlace');
   let  b=document.getElementById('enlace2');
-    a.addEventListener('click',function (event) {
+    a?.addEventListener('click',function (event) {
   event.preventDefault(); //esto cancela el comportamiento del click
-  a.classList.add("regaloArriba")
+  a?.classList.add("regaloArriba")
   b?.classList.add("mensaje")
   setTimeout(()=> location.href="http://localhost:4321/inicio",10000);
 });
