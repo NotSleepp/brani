@@ -10,8 +10,22 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.3.2",
     "@astrojs/check": "^0.4.1",
+    "@astrojs/react": "^3.0.10",
+    "@astrojs/tailwind": "^5.1.0",
+    "@fontsource-variable/onest": "^5.0.2",
+    "@fontsource/cedarville-cursive": "^5.0.8",
+    "@types/animejs": "^3.1.12",
+    "@types/react": "^18.2.56",
+    "@types/react-dom": "^18.2.19",
+    "animejs": "^3.2.2",
+    "aos": "^2.3.4",
+    "astro": "^4.3.2",
+    "gsap": "^3.12.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "scrollmagic": "^2.0.8",
+    "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
   }
 }
