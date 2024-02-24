@@ -1,114 +1,37 @@
 ---
-import "@fontsource/cedarville-cursive";
+import Layout from "../layouts/Layout.astro";
+import GaleriaInicio from "../components/GaleriaInicio.astro"
+import FloresTitulo from "../components/imagenes/FloresTitulo.astro"
+import BraniHoraDeAventura from "../components/imagenes/BraniHoraDeAventura.astro";
+import FlorEsquina from "../components/imagenes/FlorEsquina.astro"
 ---
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="description" content="Astro description" />
-  <meta name="viewport" content="width=device-width" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="generator" content={Astro.generator} />
-</head>
+<Layout title="Inicio">
+  <main>
+    <FlorEsquina/>
+    <BraniHoraDeAventura/>
+    <section class="w-full mx-auto lg:w-[740px] mt-[184px] mb-[122px] bg-white/50 p-16">
+      <h1 class="text-5xl font-bold flex flex-row gap-x-4 pb-6 text-black">
+        Bren & Dani
+      </h1>
+      <p class="text-xl opacity-80 text-wrap">
+        Hola mi amor, ¡Bienvenida a este espacio que cree para festejar nuestro
+        aniversario! este lugar lo cree especialmente para ver y revivir nuestra
+        historia, compartir nuevos momentos y soñar con un futuro juntos. vas a
+        poder ver nuestra historia desde mi perspectiva, desde el primer momento
+        que nos vimos. vas a ver también fotos nuestras, música que nos
+        representen o que nos dedicamos y seguramente en algún futuro vamos a
+        tener juegos y más. pero no es solo un álbum de recuerdos bebe, va a
+        irse actualizando! va a ser un espacio donde podamos seguir escribiendo
+        toda nuestra historia y compartir experiencias nuevas espero que te
+        guste este espacio que cree con todo mi amor para vos.
+      </p>
+      <FloresTitulo/>
+    </section>
 
-<main class="flex justify-center items-center w-full">
-  <section class="relative mt-64">
-    <a href="#" class="alert">
-      <div id="enlace" class="regaloArribaDef">
-        <img src="../../regaloArriba.png" alt="" />
-      </div>
-      <div>
-        <img class="regaloAbajo" src="../../regaloAbajo.png" alt="" />
-        <p id="enlace2" class="fuenteCursiva msgOculto absolute">
-          Feliz año <span> <br />mi amor!</span>
-        </p>
-      </div>
-    </a>
-  </section>
-</main>
+    <GaleriaInicio/>
 
-<style>
-  body {
-    background-color: #f5f5dc;
-  }
-
-  .msgOculto {
-    opacity: 0;
-  }
-
-  .regaloArribaDef {
-    width: 30rem;
-    position: absolute;
-    z-index: 999;
-  }
-
-  .regaloArriba {
-    animation: regaloA 15s forwards;
-  }
-
-  .regaloAbajo {
-    width: 30rem;
-  }
-
-  button:active {
-    background-color: red;
-  }
-
-  @keyframes regaloA {
-    0% {
-      top: -2%;
-      left: -0%;
-    }
-    10% {
-      top: -10%;
-      left: -20%;
-    }
-    100% {
-      top: -50%;
-      left: -30%;
-      transform: rotate(-60deg);
-    }
-  }
-
-  .mensaje {
-    top: 29%;
-    opacity: 0;
-    font-size: 4rem;
-    left: 24%;
-    z-index: 0;
-
-    animation: mensajetop 8s forwards;
-  }
-  @keyframes mensajetop {
-    to {
-      top: 5%;
-      opacity: 1;
-    }
-  }
-
-  .mensaje span {
-    opacity: 0;
-    animation: mensajeBot 3s forwards;
-    animation-delay: 3s;
-  }
-
-  @keyframes mensajeBot {
-    to {
-      opacity: 1;
-    }
-  }
-
-  .fuenteCursiva {
-    font-family: "Cedarville Cursive", cursive;
-  }
-</style>
-
-<script>
-  let a = document.getElementById("enlace");
-  let b = document.getElementById("enlace2");
-  a?.addEventListener("click", function (event) {
-    event.preventDefault(); //esto cancela el comportamiento del click
-    a?.classList.add("regaloArriba");
-    b?.classList.add("mensaje");
-    setTimeout(() => (location.href = "http://localhost:4321/inicio"), 10000);
-  });
-</script>
+    
+  </main>
+  
+</Layout>

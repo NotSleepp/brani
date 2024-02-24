@@ -1,0 +1,114 @@
+---
+import "@fontsource/cedarville-cursive";
+---
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Astro description" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="generator" content={Astro.generator} />
+</head>
+
+<main class="flex justify-center items-center w-full">
+  <section class="relative mt-64">
+    <a href="#" class="alert">
+      <div id="enlace" class="regaloArribaDef">
+        <img src="https://res.cloudinary.com/dipxqc5kj/image/upload/v1708815222/regaloArriba_cgd4m9.png" alt="" />
+      </div>
+      <div>
+        <img class="regaloAbajo" src="https://res.cloudinary.com/dipxqc5kj/image/upload/v1708815222/regaloAbajo_hjqwot.png" alt="" />
+        <p id="enlace2" class="fuenteCursiva msgOculto absolute">
+          Feliz año <span> <br />mi amor!</span>
+        </p>
+      </div>
+    </a>
+  </section>
+</main>
+
+<style>
+  body {
+    background-color: #f5f5dc;
+  }
+
+  .msgOculto {
+    opacity: 0;
+  }
+
+  .regaloArribaDef {
+    width: 30rem;
+    position: absolute;
+    z-index: 999;
+  }
+
+  .regaloArriba {
+    animation: regaloA 15s forwards;
+  }
+
+  .regaloAbajo {
+    width: 30rem;
+  }
+
+  button:active {
+    background-color: red;
+  }
+
+  @keyframes regaloA {
+    0% {
+      top: -2%;
+      left: -0%;
+    }
+    10% {
+      top: -10%;
+      left: -20%;
+    }
+    100% {
+      top: -50%;
+      left: -30%;
+      transform: rotate(-60deg);
+    }
+  }
+
+  .mensaje {
+    top: 29%;
+    opacity: 0;
+    font-size: 4rem;
+    left: 24%;
+    z-index: 0;
+
+    animation: mensajetop 8s forwards;
+  }
+  @keyframes mensajetop {
+    to {
+      top: 5%;
+      opacity: 1;
+    }
+  }
+
+  .mensaje span {
+    opacity: 0;
+    animation: mensajeBot 3s forwards;
+    animation-delay: 3s;
+  }
+
+  @keyframes mensajeBot {
+    to {
+      opacity: 1;
+    }
+  }
+
+  .fuenteCursiva {
+    font-family: "Cedarville Cursive", cursive;
+  }
+</style>
+
+<script>
+  let a = document.getElementById("enlace");
+  let b = document.getElementById("enlace2");
+  a?.addEventListener("click", function (event) {
+    event.preventDefault(); //esto cancela el comportamiento del click
+    a?.classList.add("regaloArriba");
+    b?.classList.add("mensaje");
+    setTimeout(() => (location.href = "http://localhost:4321/inicio"), 10000);
+  });
+</script>
