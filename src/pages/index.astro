@@ -3,11 +3,12 @@ import Layout from "../layouts/Layout.astro";
 import GaleriaInicio from "../components/GaleriaInicio.astro"
 import FloresTitulo from "../components/imagenes/FloresTitulo.astro"
 import BraniHoraDeAventura from "../components/imagenes/BraniHoraDeAventura.astro";
+import ImagenesCloudi from "../components/ImagenesCloudi"
 import FlorEsquina from "../components/imagenes/FlorEsquina.astro"
+
 ---
 
 <Layout title="Inicio">
-  <main>
     <FlorEsquina/>
     <BraniHoraDeAventura/>
     <section class="w-full mx-auto lg:w-[740px] mt-[184px] mb-[122px] bg-white/50 p-16">
@@ -28,7 +29,7 @@ import FlorEsquina from "../components/imagenes/FlorEsquina.astro"
       </p>
       <FloresTitulo/>
     </section>
-
+  <ImagenesCloudi client:load/>
     <GaleriaInicio/>
 
     
